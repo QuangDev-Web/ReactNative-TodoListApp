@@ -84,6 +84,9 @@ android {
         targetSdkVersion rootProject.ext.targetSdkVersion
         versionCode 1
         versionName "1.0"
+        ndk {
+            abiFilters "armeabi-v7a", "x86", "x86_64" // Bỏ arm64-v8a tạm thời
+        }
     }
     signingConfigs {
         debug {
