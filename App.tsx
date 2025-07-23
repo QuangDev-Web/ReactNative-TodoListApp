@@ -1,25 +1,17 @@
-import { StyleSheet, Text, View } from 'react-native';
+import { StatusBar } from 'react-native';
+import HomeScreen from './src/home/HomeScreen';
 
 const App = () => {
   return (
-    <View style={styles.container}>
-      <Text style={styles.title}>Todo List</Text>
-    </View>
+    <>
+      <StatusBar
+        translucent //Khi true,thanh trạng thái trở nên trong suốt và nội dung bên dưới có thể hiển thị phía sau nó
+        barStyle={'light-content'}
+        backgroundColor="transparent" //Kết hợp với translucent để tạo hiệu ứng thanh trạng thái trôi nổi,nhìn thấy được nội dung phía dưới.
+      />
+      <HomeScreen />
+    </>
   );
 };
 
 export default App;
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: 'coral',
-  },
-  title: {
-    fontFamily: 'Poppins-Bold',
-    fontSize: 32,
-    color: '#fff',
-  },
-});
