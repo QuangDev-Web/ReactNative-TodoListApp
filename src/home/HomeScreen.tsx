@@ -1,4 +1,4 @@
-import { Text, View } from 'react-native';
+import { View } from 'react-native';
 import Container from '../components/Container';
 import RowComponent from '../components/RowComponent';
 import Section from '../components/Section';
@@ -6,15 +6,18 @@ import TextComponent from '../components/TextComponent';
 import TitleComponent from '../components/TitleComponent';
 import { globalStyles } from '../styles/globalStyles';
 import CardComponent from '../components/CardComponent';
+import { Element4, Notification, SearchNormal1 } from 'iconsax-react-native';
+import { colors } from '../constants/colors';
+import TagComponent from '../components/TagComponent';
+import SpaceComponent from '../components/SpaceComponent';
 
 const HomeScreen = () => {
-  console.log('home');
   return (
     <Container>
       <Section>
         <RowComponent justify="space-between">
-          <TextComponent text="icon" flex={0} />
-          <TextComponent text="icon" flex={0} />
+          <Element4 size={24} color={colors.desc} />
+          <Notification size={24} color={colors.desc} />
         </RowComponent>
       </Section>
       <Section>
@@ -27,8 +30,8 @@ const HomeScreen = () => {
           justify="space-between"
           styles={globalStyles.inputContainer}
         >
-          <TextComponent text="search" />
-          <Text>Icon</Text>
+          <TextComponent text="Search task" color="#696B6F" />
+          <SearchNormal1 size={24} color={colors.desc} />
         </RowComponent>
       </Section>
       <Section>
@@ -36,8 +39,11 @@ const HomeScreen = () => {
           <RowComponent>
             <View style={{ flex: 1 }}>
               <TitleComponent text="Task Progress" />
-              <TextComponent text="card component" />
-              <TextComponent text="tag" />
+              <TextComponent text="30/40 task done" />
+              <SpaceComponent height={12} />
+              <RowComponent justify="flex-start">
+                <TagComponent text="March" />
+              </RowComponent>
             </View>
             <View>
               <TextComponent text="circleChar" />
